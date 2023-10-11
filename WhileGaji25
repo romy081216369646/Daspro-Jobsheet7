@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class WhileGaji25 {
+
+    public static void main(String[] args) {
+        int jumlahkaryawan, jumlahjamlembur;
+        double gajilembur=0, totalgajilembur=0;
+        String jabatan;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah karyawan: ");
+        jumlahkaryawan = sc.nextInt();
+
+        int i=0;
+        while (i< jumlahkaryawan) {
+            System.out.println("Pilihan jabatan- direktur, manajer, karyawan");
+            System.out.print(" Masukkan jabatan karyawan ke-" + (i+1) + ": " );
+            jabatan = sc.next();
+            System.out.print("Masukkan jumlah jam lembur: ");
+            jumlahjamlembur = sc.nextInt();
+            i++;
+
+            if (jabatan.equalsIgnoreCase("Direktur")) {
+                continue;
+            } else if (jabatan.equalsIgnoreCase("manajer")) {
+                gajilembur = jumlahjamlembur * 100000;
+            } else if (jabatan.equalsIgnoreCase("karyawan")) {
+                gajilembur = jumlahjamlembur * 75000; 
+            }
+
+            totalgajilembur += gajilembur;   
+        }
+        System.out.println("Total gaji lembur: " + totalgajilembur);
+    }
+}
